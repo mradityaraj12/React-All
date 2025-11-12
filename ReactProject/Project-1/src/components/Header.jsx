@@ -1,6 +1,11 @@
-import 
+import Logo from "./Logo";
+import Navbar from "./Navbar";
 
 const Header = () => {
-    return <div>
-    </div>
+    return <>
+        <Logo/>
+        <Navbar/>
+    </>
 }
+
+export default Header;
