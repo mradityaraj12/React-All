@@ -4,6 +4,7 @@ import {createRoot} from "react-dom/client";
 // import {Heading , App} from "./App";
 import App from "./App";
 import Heading from "./App";
+import "./index.css";
 
 
 // jsx => vite => React Element
