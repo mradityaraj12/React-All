@@ -1,15 +1,15 @@
 import image from "../assets/logo.jpg";
 
 const Logo = () => {
-    return  <>
+    return ( <>
           <img 
           src={image}
            alt=""
-           style={{width:"300px" , height:"200px" }}
+           style={{width:"80px" , height:"100px" , objectFit:"cover"}}
            />
 
     </>
-    
+    ); 
 }
 
 export default Logo;
