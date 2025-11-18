@@ -35,7 +35,7 @@ body{
 
   color: black;
   text-decoration: none;
-  padding: 10pox 30px;
+  padding: 10px 30px;
   font-weight: bold;
   background-color: antiquewhite;
 
@@ -43,25 +43,41 @@ body{
 
 /*-------------- Body  Design -------------------*/
 .center-container {
-  width: 1400px;
+  width: 1300px;
   min-height: calc(100vh - 100px);
   margin: auto;
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
 
 
 }
 
-.center-container .card {
+.center-container .btn button {
+  width: initial;
+  padding: 8px 35px;
+  margin: 15px;
+  cursor: pointer;
+  font-size: 18px;
+
+}
+
+.center-container .card-container {
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.center-container .card-container .card {
   width: 250px;
-  height: 350px;
+  height: 300px;
   padding: 10px 15px;
   box-shadow: 0px 0px 4px 1px #b9b9b9;
   border-radius: 7px;
 }
 
-.center-container.card.profile {
+.center-container .card .profile {
 
   height: 65%;
   background-color: #fff;
@@ -75,6 +91,8 @@ body{
 
 .center-container .card .info {
   height: 35%;
+  display: grid;
+  grid-template-rows: 1fr auto;
 
 }
 
@@ -101,3 +119,4 @@ body{
   color: white;
   border: none;
 }
+

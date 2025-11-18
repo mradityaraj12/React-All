@@ -5,11 +5,13 @@ const Logo = () => {
           <img 
           src={image}
            alt=""
-           style={{width:"80px" , height:"100px" , objectFit:"cover"}}
+           style={{width:"80px" , 
+            height:"80px" ,
+            objectFit:"cover"}}
            />
 
     </>
     ); 
-}
+};
 
 export default Logo;
