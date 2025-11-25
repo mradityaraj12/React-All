@@ -1,15 +1,27 @@
+import { useState } from "react";
 
 
 const Navbar = () => {
-    return <div className="navbar">
+    const [isLogin , setisLogin]=useState(false);
+
+    const handleLogin = () => setisLogin(!isLogin);
+    const handleLogout = () => setisLogin(!isLogin);
+
+    return (
+    <div className="navbar">
             <a href="#">Home</a>
             <a href="#">About</a>
             <a href="#">Career</a>
             <a href="#">Contact</a>
-
-
-        </div>
             
+            { isLogin ?
+            <button onClick={handleLogout} className="logoutBtn" >Logout</button> :
+            
+            <button onClick={handleLogin} className="loginBtn" >Login</button>
+
+        }
+        </div>
+    );        
 
     
 }

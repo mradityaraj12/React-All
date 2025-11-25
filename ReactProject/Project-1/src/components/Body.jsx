@@ -1,8 +1,10 @@
 
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import Card from "./Card";
-import {config} from "../constants/constant";
+import {getProducts} from "../services/api"
+// import {config} from "../constants/constant";
 // import Parent from "./Parent";
+import Shimmer from './Shimmer';
 
 
 
@@ -16,24 +18,48 @@ import {config} from "../constants/constant";
 
 
    const Body = () => {
-        const [reactCount,setreactCount] = useState(0);
 
-        const handleClick = () => {
-                count++;
-                console.log("Count :" ,count);
+       
+        // const [reactCount,setreactState] = useState([]);
+         
+        // const handleClick = () => {
+             
+        //     setreactState(prev => prev + 1);
+           
+        //     console.log("ReactCount :", reactCount + 1);    
+        // }
+
+        const [productList, setProductList] = useState([])
+
+        const load = async () => {
+            const product = await getProducts("/api/products");
+
+
+            setProductList(product);
         }
+
+        useEffect( () =>{
+            load()
+
+        } , [] );
+
+
+        if(productList.length === 0){
+            return <Shimmer></Shimmer>
+        }
+    
 
     return (
 
          <div>
             <div className="center-container">
-                <div className="btn">
+                {/* <div className="btn">
                         <h2>Count: {reactCount} </h2>
                         <button onClick= {handleClick} >Click</button>
-                </div>
+                </div> */}
 
                 <div className="card-container">
-                     {config.map((element , index) => {
+                     {productList.map((element , index) => {
                     return <Card key={index} item = {element}/>
                 })}
             </div>
